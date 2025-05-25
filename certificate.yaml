@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: minio-web-ui-cert
+  namespace: minio-tenant
+spec:
+  secretName: minio-cert-tls
+  issuerRef:
+    # name: cloudflare-cluster-issuer
+    name: cloudflare-cluster-issuer # Corrected name
+    kind: ClusterIssuer
+  dnsNames:
+    - minio.k8.succeedex.in

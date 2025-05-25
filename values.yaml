@@ -1,0 +1,22 @@
+tenant:
+  name: myminio
+  namespace: minio-tenant
+
+  configSecret:
+    name: minio-tenant-secret
+    accessKey: minioadmin
+    secretKey: minioadmin123
+
+  pools:
+    - name: pool-0
+      servers: 1
+      volumesPerServer: 1
+      size: 10Gi
+      storageClassName: longhorn
+
+  mountPath: /export
+  requestAutoCert: true
+
+  env:
+    - name: MINIO_BROWSER
+      value: "on"

@@ -1,0 +1,17 @@
+helm install \
+  --namespace minio-operator \
+  --create-namespace \
+  operator minio-operator/operator
+
+helm install \
+  --namespace minio-tenant \
+  --create-namespace \
+  --values values.yaml \
+  minio-tenant minio-operator/tenant
+
+  helm upgrade \
+  --namespace minio-tenant \
+  --create-namespace \
+  --values values.yaml \
+  minio-tenant minio-operator/tenant
+
