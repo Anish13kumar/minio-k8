@@ -15,7 +15,9 @@ tenant:
       storageClassName: longhorn
 
   mountPath: /export
-  requestAutoCert: true
+  requestAutoCert: false
+  certificate:
+    requestAutoCert: false
 
   env:
     - name: MINIO_BROWSER

@@ -9,7 +9,7 @@ helm install \
   --values values.yaml \
   minio-tenant minio-operator/tenant
 
-  helm upgrade \
+helm upgrade \
   --namespace minio-tenant \
   --create-namespace \
   --values values.yaml \
